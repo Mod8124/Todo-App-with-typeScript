@@ -51,7 +51,7 @@
 #wrapper h1 {
     color:var(--VeryLightGray);
     letter-spacing: 10px;
-    font-size: 3em;
+    font-size: 2em;
     text-transform: uppercase;
 }
 
@@ -245,5 +245,10 @@ header img {
         background-color: var(--VeryLightGrayishBlue);
         background-size: 100% 40%;
     }
+
+    #wrapper h1 {
+        font-size: 3em;
+    }
+    
     
 }
