@@ -4,7 +4,7 @@
         <header>
                 <h1>Todo</h1> 
                 <div class="icon_active">
-                         <img :src=" active ? require('../images/icon-moon.svg') : require('../images/icon-sun.svg')" alt="icon-change dark" @click="change">
+                         <img :src=" active ? require('../images/icon-sun.svg') : require('../images/icon-moon.svg')" alt="icon-change dark" @click="change">
                 </div>
         </header>
 
