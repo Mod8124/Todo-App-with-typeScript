@@ -42,7 +42,7 @@ export default defineComponent({
         const tasks = ref<Todo[]>([])
         const filterBy = ref('' as string|boolean)
         
-        const changeCheck = (e:any) => {
+        const changeCheck = (e:HTMLFormElement) => {
             e.preventDefault()
             check.value = !check.value;
             console.log(check)

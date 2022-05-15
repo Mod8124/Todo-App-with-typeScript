@@ -7,8 +7,6 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import Input from './components/Input.vue'
-
-
 export default defineComponent({
   name: 'App',
   components: {

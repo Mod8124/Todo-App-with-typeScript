@@ -8,7 +8,7 @@
  }
 
 .active#wrapper {
-    background-image: url('../images/bg-desktop-dark.jpg');
+    background-image: url('../images/bg-mobile-dark.jpg');
     background-color: var(--VeryDarkBlue);
 }
 
@@ -39,10 +39,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background-image: url('../images/bg-desktop-light.jpg');
+    background-image: url('../images/bg-mobile-light.jpg');
     background-repeat: no-repeat;
     background-position: top center;
     align-items: center;
+    background-size: cover;
     background-color: var(--VeryLightGrayishBlue);
     background-size: 100% 40%;
 }
@@ -226,4 +227,23 @@ header img {
     .clear {
         display: block;
     }
+
+    .active#wrapper {
+        background-image: url('../images/bg-desktop-dark.jpg');
+        background-color: var(--VeryDarkBlue);
+    }
+
+    #wrapper {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-image: url('../images/bg-desktop-light.jpg');
+        background-repeat: no-repeat;
+        background-position: top center;
+        align-items: center;
+        background-color: var(--VeryLightGrayishBlue);
+        background-size: 100% 40%;
+    }
+    
 }

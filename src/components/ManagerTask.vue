@@ -1,5 +1,6 @@
+/* eslint-disable vue/no-mutating-props */
 <template>
-            <section>
+            <div>
                         <div  v-for="(name, index) in filter" :key="index"><!--start loop-manager-->
 
                   <div class="bodyInput managerTask">
@@ -16,6 +17,7 @@
                         </form>
                  </div>
              </div><!--end loop manager-->
+
                     <div class="options" v-if="tasks.length > 0">
                          <p>{{tasks.length}} items left</p>
                              <div class="btnOptions">
@@ -25,17 +27,51 @@
                              </div>
                         <div class="clear"><button @click="clear">Clear Completed</button></div>
                     </div>
-            </section>
+            </div>
 
 </template>
 
 <script lang="ts">
-import {defineComponent, ref } from 'vue'
+import {defineComponent, ref, PropType} from 'vue'
+import Todo from '../Types/Todo'
 
 
 export default defineComponent({
+     
     name:"ManagerTask",
-    props:['tasks','clear','valueFilterBy','deleteTask','changeTask','filter','filterBy'],
+    // props:['tasks','clear','valueFilterBy','deleteTask','changeTask','filter','filterBy'],
+    props:{
+        tasks:{
+            type:Array as PropType<Todo[]>,
+            required:false,
+            default:null
+        },
+        clear:{
+            type:Function,
+            require:true,
+        },
+        valueFilterBy:{
+            type:Function,
+            required:true,
+        },
+        deleteTask:{
+            type:Function,
+            required:true,
+        },
+        changeTask:{
+            type:Function,
+            required:true,
+        },
+        filter:{
+            type:Array as PropType<Todo[]>,
+            required:false,
+            default:null
+        },
+        filterBy:{
+            type:[String,Boolean] as PropType<string|boolean>,
+            required:true
+        }
+    },
     setup(props) {
         const taskss = ref(props.tasks)
       return {
@@ -43,6 +79,11 @@ export default defineComponent({
           taskss,
       }
     },
+    data() {
+        return {
+            data:this.filter
+        }
+    }
 
 })
 </script>
