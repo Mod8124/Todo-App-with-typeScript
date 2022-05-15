@@ -1,27 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <main id="wrapper" :class="active? 'active' : ''">
+        <Input :change="change" :active="active"/>
+  </main>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent, ref } from 'vue';
+import Input from './components/Input.vue'
+
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld
+    Input
+  },
+  setup() {
+    const active = ref(false)
+    const change = () => {
+      active.value = !active.value;
+    }
+
+    return {
+      active,
+      change
+    }
   }
+
 });
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style scoped>
+    @import './css/global.css';
+</style>>
+
+

@@ -1,0 +1,229 @@
+@import './variables.css';
+
+ * {
+     margin:0px;
+     padding:0px;
+     box-sizing: border-box;
+     font-family: 'Josefin Sans', sans-serif;
+ }
+
+.active#wrapper {
+    background-image: url('../images/bg-desktop-dark.jpg');
+    background-color: var(--VeryDarkBlue);
+}
+
+.active#wrapper h1 {
+    color:var(--VeryLightGray);
+}
+
+.active .addTodo {
+    background-color: var(--VeryDarkDesaturatedBlue);
+}
+
+.active .addTodo div input[type="text"]{
+    background-color: var(--VeryDarkDesaturatedBlue);
+    color:white;
+}
+
+
+.active .options {
+    background-color: var(--VeryDarkDesaturatedBlue);
+}
+
+.active .options button:hover{
+    color:white;
+}
+
+ #wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url('../images/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    align-items: center;
+    background-color: var(--VeryLightGrayishBlue);
+    background-size: 100% 40%;
+}
+
+#wrapper h1 {
+    color:var(--VeryLightGray);
+    letter-spacing: 10px;
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+.mainInput {
+    height: 76%;
+    width: 90%;
+    max-width: 800px;
+}
+
+header {
+    width: 100%;
+    height: 14%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.icon_active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+header img {
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.bodyInput {
+    height: 86%;
+}
+
+.addTodo {
+    width: 100%;
+    background-color: var(--VeryLightGray);
+    border-radius: 8px;
+}
+
+.addTodo div {
+    width: 100%;
+    display: grid;
+    padding: 20px;
+    padding-top: 0;
+    padding-bottom: 0px;
+    grid-template-columns: 10% 90%;
+    min-height: 65px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.addTodo div input[type="text"] {
+    height: 100%;
+    outline: none;
+    border: none;
+    color:var(--DarkGrayishBlue);
+    padding-left: 20px;
+    font-size: var(--font);
+}
+
+#circle {
+    border-radius: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-width: 28px;
+    cursor: pointer;
+    min-height: 28px;
+    max-width: 30px;
+    max-width: 30px;
+}
+
+.circle {
+    background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.circleNotActive {
+    border:2px solid var(--VeryDarkGrayishBlue);
+}
+
+#firstIndex {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.managerTask .addTodo {
+   border-radius: 0px;
+}
+
+.managerTask div{
+    position: relative;
+    border-bottom: 1px solid var(--LightGrayishBlue);
+}
+
+.managerTask .addTodo div{
+    margin-bottom: 0px;
+}
+
+.managerTask div:hover > .inputCross {
+    display: block;
+}
+
+.inputCross {
+    position:absolute;
+    right: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+.options {
+    background-color: var(--VeryLightGray);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color:var(--DarkGrayishBlue);
+    padding: 30px;
+    padding-top: 0;
+    padding-bottom: 0px;
+    display: grid;
+    grid-template-columns: 80%;
+    justify-content: center;
+    min-height: 65px;
+    align-items: center;
+}
+
+.clear {
+    text-align: center;
+}
+.btnOptions {
+    display: grid;
+    grid-template-columns:auto auto auto ;
+}
+
+.options button {
+    color:var(--DarkGrayishBlue);
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    font-size: 14px;
+}
+.clear {
+    display: none;
+}
+.options p {
+    display: none;
+}
+
+.options button:hover {
+    color: var(--VeryDarkGrayishBlue);
+}
+
+#btnActive {
+    color:var( --BrightBlue);
+}
+
+.line {
+    text-decoration: line-through;
+    color:red;
+}
+
+@media screen and (min-width:740px) {
+    .addTodo div {
+        grid-template-columns: 4% 96%;
+    }
+
+    .options {
+        grid-template-columns: 30% 40% 30%;
+    }
+
+    .options p {
+        display: block;
+    }
+
+    .clear {
+        display: block;
+    }
+}
