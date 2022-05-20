@@ -22,7 +22,7 @@
                          <p>{{tasks.length}} items left</p>
                              <div class="btnOptions">
                                     <button @click="valueFilterBy('')" :id="filterBy === '' ? 'btnActive':''">All</button>
-                                    <button @click="valueFilterBy(false) " :id="filterBy === false ? 'btnActive ':''">Actived</button>
+                                    <button @click="valueFilterBy(false) " :id="filterBy === false ? 'btnActive':''">Actived</button>
                                     <button @click="valueFilterBy(true)" :id="filterBy === true ? 'btnActive':''">Completed</button>
                              </div>
                         <div class="clear"><button @click="clear">Clear Completed</button></div>
