@@ -19,7 +19,6 @@
                     <input type="text" placeholder="Create a new todo..." v-model="work">
                 </div>
         </form>
-
         <manager-task :tasks="tasks" :filter="filter" :clear="clear" :valueFilterBy="valueFilterBy" :deleteTask="deleteTask" :changeTask="changeTask" :filterBy="filterBy"/>
        </div>
 
@@ -33,7 +32,7 @@ import Todo from '../Types/Todo'
 import ManagerTask from './ManagerTask.vue'
 
 export default defineComponent({
-  components: { ManagerTask },
+  components: { ManagerTask,  },
     name:'Input',
     props:['change','active'],
     setup() {
@@ -46,10 +45,10 @@ export default defineComponent({
             e.preventDefault()
             check.value = !check.value;
             console.log(check)
-        }
 
+        }
         const getDatos = () => {
-             const task = ref<Todo>({check:check.value,task:work.value})
+        const task = ref<Todo>({check:check.value,task:work.value})
 
            tasks.value.push(task.value)
            work.value = ''
@@ -60,8 +59,8 @@ export default defineComponent({
             tasks.value[a].check = !tasks.value[a].check
         }
 
-        const deleteTask = (a:string) =>{
-           tasks.value = tasks.value.filter((x:Todo)=> x.task !==a)
+        const deleteTask = (a:number) =>{
+           tasks.value.splice(a,1)
         }
 
         const clear = () =>{
@@ -69,7 +68,7 @@ export default defineComponent({
            
         }
 
-             const valueFilterBy = (a:string|boolean) => {
+       const valueFilterBy = (a:string|boolean) => {
             filterBy.value = a
         }
 

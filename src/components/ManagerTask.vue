@@ -1,22 +1,24 @@
 /* eslint-disable vue/no-mutating-props */
 <template>
             <div>
-                        <div  v-for="(name, index) in filter" :key="index"><!--start loop-manager-->
 
-                  <div class="bodyInput managerTask">
-                        <form class="addTodo" @submit.prevent="getDatos" :id="index == 0 ?'firstIndex':''">
-                                <div>
-                                    <span>
-                                        <span :class="name.check ? 'circle':'circleNotActive'" @click="changeTask(index)" id="circle">
-                                            <img src="../images/icon-check.svg" alt="icon-check" v-if="name.check">
-                                        </span>
-                                    </span>
-                                    <input type="text" placeholder="Create a new todo..." :value="name.task" disabled :class="name.check === true ? 'line':''">
-                                    <span class="inputCross"><img src="../images/icon-cross.svg" alt="icon-scrooss" @click="deleteTask(name.task)"></span>
-                                </div>
-                        </form>
-                 </div>
-             </div><!--end loop manager-->
+                                    <div  v-for="(name, index) in filter" :key="index"><!--start loop-manager-->
+
+                        <div class="bodyInput managerTask">
+                                <form class="addTodo" @submit.prevent="getDatos" :id="index == 0 ?'firstIndex':''">
+                                        <div>
+                                            <span>
+                                                <span :class="name.check ? 'circle':'circleNotActive'" @click="changeTask(index)" id="circle">
+                                                    <img src="../images/icon-check.svg" alt="icon-check" v-if="name.check">
+                                                </span>
+                                            </span>
+                                            <input type="text" placeholder="Create a new todo..." :value="name.task" disabled :class="name.check === true ? 'line':''">
+                                            <span class="inputCross"><img src="../images/icon-cross.svg" alt="icon-scrooss" @click="deleteTask(name.task)"></span>
+                                        </div>
+                                </form>
+                        </div>
+                    </div><!--end loop manager-->
+
 
                     <div class="options" v-if="tasks.length > 0">
                          <p>{{tasks.length}} items left</p>
@@ -72,6 +74,9 @@ export default defineComponent({
             required:true
         }
     },
+    components:{
+
+    },
     setup(props) {
         const taskss = ref(props.tasks)
       return {
@@ -79,11 +84,6 @@ export default defineComponent({
           taskss,
       }
     },
-    data() {
-        return {
-            data:this.filter
-        }
-    }
 
 })
 </script>
